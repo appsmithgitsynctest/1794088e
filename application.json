@@ -1,6 +1,18 @@
 {
   "pages": [
     {
+      "id": "Search",
+      "isDefault": false
+    },
+    {
+      "id": "Selected",
+      "isDefault": false
+    },
+    {
+      "id": "Dashboard",
+      "isDefault": false
+    },
+    {
       "id": "Page1",
       "isDefault": true
     }
@@ -8,8 +20,14 @@
   "viewMode": false,
   "appIsExample": false,
   "unreadCommentThreads": 0,
-  "color": "#E4D8CC",
-  "icon": "rainy-weather",
+  "color": "#ECECEC",
+  "icon": "pizza",
+  "unpublishedAppLayout": {
+    "type": "DESKTOP"
+  },
+  "publishedAppLayout": {
+    "type": "DESKTOP"
+  },
   "unpublishedCustomJSLibs": [],
   "publishedCustomJSLibs": [],
   "evaluationVersion": 2,

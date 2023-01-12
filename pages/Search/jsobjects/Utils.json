@@ -1,0 +1,25 @@
+{
+  "unpublishedCollection": {
+    "name": "Utils",
+    "pageId": "Search",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "actions": [],
+    "archivedActions": [],
+    "body": "export default {\n\tmyVar1: [],\n\tmyVar2: {},\n\tgetRefunds: () => {\n\t\tconst arr = getAllOrders.data.map(x => parseInt(x.refundstatus))\n\t\treturn ((arr.reduce((a, b) => a + b, 0))/(getAllOrders.data.length)).toFixed(2)\n\t},\n\tgetOnTimeDeliveries: () => {\n\t\tconst arr = getOrders.data.map(x => parseInt(x.on_time))\n\t\treturn ((arr.reduce((a, b) => a + b, 0))/(getOrders.data.length)).toFixed(2)\n\t},\n\n\tdelayedOrders: () => {\n\t\tconst delay = (delayedOrders.data[0].count*100)/totalOrders.data[0].count\n\t\treturn Math.round(delay)\n\t},\n\t\trefundedOrders: () => {\n\t\tconst refund = (refundedOrders.data[0].count*100)/totalOrders.data[0].count\n\t\treturn Math.round(refund)\n\t},\n\t\tsearch: () => {\n\t\tif(appsmith?.store?.searchType?.length==0){\n\t\t\treturn getAllCustomers.data\n\t\t}\n\t\telse if (appsmith?.store?.searchType=='Customers'){\n\t\t\treturn(getAllCustomers.data.filter(word => word.cname.toLowerCase().includes(name_search.text.toLowerCase())))\n\t\t}\n\t},\n\t\n\torder_id_search:() => {\n\t\t\tif(order_id_search.text.length==0){\n\t\t\treturn getAllOrders.data\n\t\t}\n\t\telse {\n\t\t\treturn(getAllOrders.data.filter(word => word.order_id.includes(order_id_search.text)))\n\t\t}\n\t}\n\t\n}",
+    "variables": [
+      {
+        "name": "myVar1",
+        "value": "[]"
+      },
+      {
+        "name": "myVar2",
+        "value": "{}"
+      }
+    ],
+    "userPermissions": []
+  },
+  "id": "Search_Utils",
+  "deleted": false,
+  "gitSyncId": "63bfa4e97170bd1e18ac5f77_63bfa5077170bd1e18ac5fb6"
+}
